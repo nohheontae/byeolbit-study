@@ -11,7 +11,7 @@
  */
 'use strict';
 
-const CACHE_VERSION = 'v1.6.0';
+const CACHE_VERSION = 'v1.6.0-voices24';
 const CACHE_NAME = `byeolbit-shell-${CACHE_VERSION}`;
 const RUNTIME_CACHE = `byeolbit-runtime-${CACHE_VERSION}`;
 
@@ -44,6 +44,19 @@ const APP_SHELL = [
   './audio/monsters/kkangchong.wav',
   './audio/monsters/donggeul.wav',
   './audio/monsters/beoseot.wav',
+  './audio/monsters/padofin.wav',
+  './audio/monsters/bosong.wav',
+  './audio/monsters/jjiritkong.wav',
+  './audio/monsters/kkotnyang.wav',
+  './audio/monsters/moraegom.wav',
+  './audio/monsters/byeolbam.wav',
+  './audio/monsters/mujigae.wav',
+  './audio/monsters/danpung.wav',
+  './audio/monsters/nunkkot.wav',
+  './audio/monsters/bungbung.wav',
+  './audio/monsters/banggeum.wav',
+  './audio/monsters/ikki.wav',
+  './audio/monsters/somsatang.wav',
   /*MONSTER-AUDIO-END*/
   './js/04-store.js',
   './js/05-voice.js',

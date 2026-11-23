@@ -1,0 +1,37 @@
+/* 별빛 학습지 — 갤럭시 폰·탭(설치형 앱) 전용 보정 */
+
+/* 노치·펀치홀·하단 제스처 바 영역 피하기 */
+body{
+  padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  overscroll-behavior-y:contain;            /* 아래로 당겨 새로고침 → 학습 진행이 날아가는 것 방지 */
+  -webkit-tap-highlight-color:transparent;  /* 터치 시 파란 박스 제거 */
+  -webkit-text-size-adjust:100%;            /* 가로 회전 시 글자 자동 확대 방지 */
+  text-size-adjust:100%;
+}
+/* 버튼·카드 길게 누를 때 글자 선택/복사 메뉴가 뜨지 않게 (입력칸은 제외) */
+button,.card,.ibtn,.bigbtn,svg,canvas{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+button{touch-action:manipulation}            /* 더블탭 확대 지연 제거 → 게임 반응 빨라짐 */
+input,textarea{-webkit-user-select:text;user-select:text}
+
+/* 설치형 앱으로 실행 중일 때 */
+.is-standalone #pwaInstall{display:none}
+
+/* 📲 앱으로 설치 버튼 */
+.pwa-install{
+  position:fixed;right:calc(16px + env(safe-area-inset-right));bottom:calc(16px + env(safe-area-inset-bottom));z-index:70;
+  border:0;border-radius:999px;padding:12px 18px;font:inherit;font-size:16px;color:#fff;cursor:pointer;
+  background:linear-gradient(135deg,#8e7dff,#5b3fd9);box-shadow:0 8px 20px rgba(91,63,217,.35);animation:pop .35s;
+}
+.pwa-install:active{transform:scale(.96)}
+
+/* ✨ 새 버전 안내 바 */
+.pwa-bar{
+  position:fixed;left:50%;transform:translateX(-50%);bottom:calc(16px + env(safe-area-inset-bottom));z-index:85;
+  display:flex;align-items:center;gap:10px;width:min(520px,calc(100% - 32px));box-sizing:border-box;
+  background:#2B2F4A;color:#fff;border-radius:18px;padding:10px 12px 10px 18px;font-weight:800;box-shadow:0 10px 24px rgba(0,0,0,.25);
+}
+.pwa-bar span{flex:1}
+.pwa-btn{border:0;border-radius:12px;background:#FFC531;color:#2B2F4A;font:inherit;font-weight:900;padding:8px 14px;cursor:pointer}
+.pwa-x{border:0;background:transparent;color:#fff;font-size:18px;padding:6px 8px;cursor:pointer}
+
+@media print{.pwa-install,.pwa-bar{display:none!important}}
